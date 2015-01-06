@@ -10,11 +10,13 @@
   <body>
 	<center>
 		<div>
-			<input type="text"></input>
-			<input type="button" value="Graph"></input>
+			<input type="text" value="x*x" id="formulaText"></input>
+			<input type="button" value="Graph" onclick="updateFormula()"></input>
 		</div>
 		<div>
-			<canvas id="graph" height="450" width="450"></canvas>
+			<canvas style="z-index: 0;" id="graph" height="450" width="450"></canvas>
+			<canvas style="z-index: 1" id="line" height="450" width="450"></canvas>
+			<canvas style="z-index: 2" id="animation" height="450" width="450"></canvas>
 		</div>
 	</center>
   </body>
