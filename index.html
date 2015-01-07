@@ -8,16 +8,21 @@
 	<script src="script/graph.js"></script>
   </head>
   <body>
-	<center>
-		<div>
-			<input type="text" value="x*x" id="formulaText"></input>
-			<input type="button" value="Graph" onclick="updateFormula()"></input>
+	<div class="centered">
+		<input type="text" value="x*x" id="formulaText">
+		<input type="button" value="Graph" onclick="updateFormula()">
+	</div>
+	<div id="display">
+		<canvas style="z-index: 0;" id="graph" height="450" width="450"></canvas>
+		<canvas style="z-index: 1;" id="line" height="450" width="450"></canvas>
+		<canvas style="z-index: 2;" id="animation" height="450" width="450"></canvas>
+		<canvas style="z-index: 3" id="timed" height="450" width="450"></canvas>
+		<div id="options">
+			<label><input type="checkbox" onchange="$('#graph').toggle();" id="displayGraph">Hide Graph</label> <!-- TODO: More options and grid -->
+			<label><input type="checkbox" onchange="$('#line').toggle();" id="displayLine">Hide Graphed Line</label>
+			<label><input type="checkbox" onchange="$('#animation').toggle();" id="display2dAnimation">Hide 2d Animation</label>
+			<label><input type="checkbox" onchange="$('#timed').toggle();" id="display1dAnimation">Hide 1d Animation</label>
 		</div>
-		<div>
-			<canvas style="z-index: 0;" id="graph" height="450" width="450"></canvas>
-			<canvas style="z-index: 1" id="line" height="450" width="450"></canvas>
-			<canvas style="z-index: 2" id="animation" height="450" width="450"></canvas>
-		</div>
-	</center>
+	</div>
   </body>
 </html>      

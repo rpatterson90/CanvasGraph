@@ -54,6 +54,15 @@ function animateFormula(formula, step, t) {
 	context.fillStyle = "green";
 	context.fill();
 	
+	canvas = document.getElementById("timed");
+	context = canvas.getContext('2d');
+	context.clearRect(0,0, canvas.width, canvas.height);
+	
+	context.beginPath();
+	context.arc(440, padding + height * (1-y), 5, 0, 2 * Math.PI, false);
+	context.fillStyle = "green";
+	context.fill();
+	
 	animation = requestAnimationFrame(function() {
 		step = (t > 1 || t < 0) ? step * -1 : step;
 		animateFormula(formula, step, t + step);

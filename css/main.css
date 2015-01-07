@@ -4,7 +4,18 @@ body {
 }
 
 div {
-	padding: 10px;
+	padding: 5px;
+}
+
+.centered {
+	text-align:center;
+}
+
+#display {
+	width: 450px;
+	height: 450px;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 canvas {
@@ -13,4 +24,15 @@ canvas {
 	right: 0;
 	margin-left: auto;
 	margin-right: auto;
+}
+
+#options {
+	position: relative;
+	float: right;
+	left: 150px;
+	padding-top: 30px;
+}
+
+#options label {
+	display: block;
 }
