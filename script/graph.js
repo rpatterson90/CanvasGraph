@@ -2,12 +2,6 @@ var height = 382;
 var width = 382;
 var padding = 30;
 
-function parseFormula(formula) {
-	return function(x) {
-		return x;
-	}
-}
-
 function setFormula(formula) {
 	drawFormula(formula);
 	animateFormula(formula, 0.0075);
@@ -15,9 +9,9 @@ function setFormula(formula) {
 
 function updateFormula() {
 	var formulaText = $("#formulaText").val();
-	var formula = parseFormula(formulaText);
+	var formula = new parser(formulaText);
 	
-	setFormula(formula);
+	setFormula(formula.makeEvaluator());
 }
 
 function drawFormula(formula) {
@@ -120,6 +114,11 @@ function createContext(canvasName) {
 function init() {
 	drawGraph();
 	setFormula(function(x) { return x * x; });
+	$("#formulaText").keyup(function(event) {
+		if (event.keyCode == 13) {
+			updateFormula();
+		}
+	});
 }
 
 $(document).ready(init);
